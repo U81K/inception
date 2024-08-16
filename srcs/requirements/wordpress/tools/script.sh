@@ -12,8 +12,7 @@ else
 	echo "WordPress is not installed."
 	wp core download --path=/var/www/html --allow-root
 	wp config create --dbname=$MYSQL_DB --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost="mariadb:3306" --extra-php --allow-root
-	# wp core config --dbhost=mariadb:3306 --dbname=$MYSQL_DB --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --path=/var/www/html --allow-root
-	# wp core install --url="https://bgannoun.42.fr" --title="My WordPress Site" --admin_user=$admin_user --admin_password=$admin_password --admin_email=$admin_email --allow-root
+	wp core install --url="https://bgannoun.42.fr" --title="My WordPress Site" --admin_user=$admin_user --admin_password=$admin_password --admin_email=$admin_email --allow-root
 fi
 
 $@

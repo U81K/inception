@@ -24,6 +24,7 @@ services:
       - 9000
     networks:
       - my_network
+    restart: always
   nginx:
     container_name: nginx
     build : ./requirements/nginx
@@ -35,6 +36,7 @@ services:
       - my_network
     volumes:
       - wordpress:/var/www/html
+    restart: always
 volumes:
   wordpress:
     name: wordpress
@@ -42,14 +44,14 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /workspaces/inception/data/wordpress_vol
+      device: /home/bgannoun/Desktop/inception/data/wordpress_vol
   mariadb:
     name: mariadb
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /workspaces/inception/data/mariadb_vol
+      device: /home/bgannoun/Desktop/inception/data/mariadb_vol
 networks:
   my_network:  
     name: my_network
